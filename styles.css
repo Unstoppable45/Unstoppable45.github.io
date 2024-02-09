@@ -1,0 +1,708 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap');
+/* Reset default styling 导航栏和首页的样式*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'CustomFont'; /* 自定义字体名称 */
+    src: url('MaShanZheng-Regular.ttf') format('truetype'); /* 指定字体文件的路径和格式 */
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'CustomFont', Arial, sans-serif;
+    background-color: #f7f7f7; /* 浅灰色背景 */
+    color: #333; /* 深灰色文字 */
+    padding-top: 60px; /* 高度等于头部的高度 */
+    padding-bottom: 1px; /* 高度等于底部的高度 */
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #ffdd00; /* 悬停状态颜色变化 */
+}
+
+.logo {
+    font-size: 24px;    /* logo字的大小和粗细 */
+    font-weight: bold;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 16px;
+}
+
+.date {
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 5px 0;
+    font-size: 16px;
+}
+
+/* Main content styling */
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.content h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #333;
+}
+
+.content p, .content ul {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.sidebar p {
+    color: #555;
+}
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .header-banner {
+        padding: 20px 10px; /* 缩小内边距 */
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        width: 40px; /* 缩小 logo 大小 */
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar a {
+        display: block;
+        margin: 5px 0;
+        width: 100%; /* 确保链接在移动设备上占满整个宽度 */
+        text-align: center; /* 中心对齐文本 */
+    }
+
+    main {
+        flex-direction: column;
+        padding: 20px;
+        padding-top: 60px; /* 保持与标题栏高度一致 */
+    }
+
+    .sidebar {
+        margin-top: 20px;
+    }
+
+    .dynamic-content {
+        padding: 10px;
+        /* 适应小屏幕的其他样式调整 */
+    }
+}
+
+/* Intro section styling */
+.intro {
+    text-align: center;
+    padding-top: 60px;
+    padding: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.intro h1 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.intro p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.intro img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.intro:hover {
+    background-color: #ece0d1; /* 淡棕色背景 */
+}
+
+/* Update navbar for current page highlighting */
+.navbar a {
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 20px; /* 调整为所需的大小 */
+}
+
+.navbar a:hover, .navbar a:focus {
+    background-color: white;
+    color: red;
+}
+
+/* Current page link */
+.navbar a.current-page {
+    background-color: white;
+    color: red;
+}
+
+/* Style for news, persons, and market items */
+.news-item, .person-item, .market-item {
+    border: 1px solid #ddd;
+    margin-bottom: 150px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.news-item img, .person-item img, .market-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.news-item p, .person-item p, .market-item p {
+    margin-top: 10px;
+}
+
+.news-item a, .person-item a, .market-item a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: red;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.news-item a:hover, .person-item a:hover, .market-item a:hover {
+    background-color: #d9534f;
+}
+
+/* Additional styles for single-page layout */
+section {
+    padding: 50px 20px;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 轻微阴影 */
+}
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Sticky header */
+header {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 1000;
+}
+
+
+
+.logo-area {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 10px;
+}
+
+.theme-text {
+    color: white;
+    font-size: 25px;
+}
+
+.date-info {
+    text-align: right;
+    color: white;
+}
+
+.gregorian-date, .day-of-week, .lunar-date {
+    display: block;
+}
+
+/* Styles for the intro section with dynamic content area */
+.dynamic-content {
+    display: flex; /* 启用flex布局 */
+    justify-content: space-between; /* 元素之间的空间平均分布 */
+    align-items: center; /* 垂直居中对齐 */
+    width: 100%; /* 确保占满整个容器宽度 */
+    height: auto; /* 高度自动，根据内容调整 */
+}
+
+.dynamic-content img, .dynamic-content video {
+    width: 50%; /* 图片宽度占满左半个页面 */
+    border-radius: 0; /* 如果不需要圆角，可以设置为0 */
+    object-fit: cover; /* 确保图片覆盖整个容器，不留空白 */
+    height: calc(100vh - 60px); /* 高度填满视口高度减去导航框高度 */
+    margin-right: 0; /* 右侧间隙为0 */
+}
+
+
+/* Styles for the navigation section with image and links */
+/* .navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+} */
+
+.side-image {
+    order: -1; /* 将图片移至左侧 */
+    width: 50%; /* 调整宽度 */
+    height: auto;
+    margin-right: 100px; /* 右边距 */
+}
+
+.page-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* 将链接对齐到右侧 */
+    margin-left: 20px; /* 左边距，如有需要 */
+}
+
+.page-links a {
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+}
+
+
+
+/* Full height sections */
+section {
+    min-height: 100vh; /* 100% of the viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    box-sizing: border-box;
+    
+}
+
+/* Header styling */
+.header-banner {
+    /* background-color: #6c4f3d; 如果你想要暗棕色背景，请取消注释这行，并注释掉红色背景的行 */
+    background-color: red; /* 如果你想要红色背景，请取消注释这行，并注释掉暗棕色背景的行 */
+    color: white;
+    padding: 10px 50px; /* 如果你想要更小的padding，请改为 10px 20px */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* 固定头部 */
+    top: 0;
+    width: 100%; /* 覆盖整个视口宽度 */
+    z-index: 1000; /* 确保在其他内容之上 */
+}
+
+/* 当滚动时隐藏导航栏 */
+.header-banner.hide {
+    top: -100px; /* 根据实际高度调整 */
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 10px;
+}
+
+.theme-text {
+    color: white;
+    font-size: 25px;
+}
+
+.date-info {
+    text-align: right;
+    color: white;
+    font-size: 20px;
+}
+
+/* Footer on the last section adjusted for minimal space */
+.footer-last-section {
+    background-color: #f0f0f0;
+    color: #555;
+    text-align: center;
+    padding: 2vh 0; /* Use viewport height for padding */
+    width: 100%;
+    min-height: 10vh; /* Footer takes 10% of the viewport height */
+    position: relative; 
+    bottom: 0;
+    width: 100%; /* 覆盖整个视口宽度 */
+    z-index: 1000; /* 确保在其他内容之上 */
+}
+
+
+/* 隐藏所有页面上的底部栏，除了最后一个页面 */
+/* section:not(:last-of-type) .footer-last-section {
+    display: none;
+    } */
+
+
+/* Write the restored CSS content to file */
+
+/* 非遗资讯 */
+/* 非遗资讯 */
+.heritage-news {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* 确保内容从顶部开始 */
+    background-color: #f9f9f9; /* 轻微灰色背景 */
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 轻微阴影 */
+    margin-bottom: 0px;
+    text-align: center;
+}
+/* 页面标题 */
+.page-title {
+    font-size: 2em ;
+    color: #333 !;
+    text-align: center ;
+    margin: 20px 0 ;
+    padding: 10px ;
+}
+.page-title1 {
+    font-size: 2em ;
+    color: #333 !;
+    text-align: center ;
+    margin: 80px 0 ;
+    padding: 5px ;
+}
+.news-content {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row; /* 水平排列 */
+    align-items: center; /* 确保内容从顶部开始 */
+    /* ...其他需要的样式... */
+}
+.news-gallery {
+    display: flex;
+    flex-direction: row; /* 水平排列图片 */
+    width: calc(60% - 20px); /* 调整宽度，留出间距 */
+    margin-right: 20px; /* 与右侧列表的间距 */
+}
+
+
+
+.news-item img {
+    width: 100%; /* 图片宽度 */
+    height: auto; /* 图片高度自动 */
+    border-radius: 4px; /* 图片圆角 */
+    margin-bottom: 100px; /* 与文字介绍的间距 */
+}
+
+.news-item p {
+    color: #555; /* 文字颜色 */
+    margin-top: -100px; /* 负值上移文字 */
+    font-size: 20px;
+}
+
+.news-list {
+    width: 35%; /* 右侧列表宽度 */
+    border-left: 4px solid #f00; /* 红色边框 */
+    padding: 10px 20px; /* 内边距 */
+    background-color: #fff; /* 白色背景 */
+    color: #333; /* 深灰色文字 */
+    /* margin-left: 20px; 与图片的间距 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 轻微阴影 */
+    border-radius: 4px; /* 圆角 */
+    height: fit-content; /* 高度适应内容 */
+    margin-right: 50px; /* 距离右边界50px */
+}
+
+.news-list h2 { 
+    color: #f00; 
+    margin-bottom: 25px; 
+}
+
+.news-list ul {
+    list-style-type: none; /* 移除默认列表样式 */
+    padding-left: 0; /* 移除默认内边距 */
+}
+
+.news-list ul li {
+    margin-bottom: 5px;
+    padding: 5px 0; /* 上下内边距 */
+    border-bottom: 1px solid #eee; /* 底部边框 */
+    font-size: 20px;
+}
+
+.news-list ul li:last-child {
+    border-bottom: none; /* 最后一个列表项没有底部边框 */
+}
+@keyframes slideUpDown {
+    0%, 100% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+.news-item {
+    width: calc(50% - 10px);
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    background-color: #fff;
+    animation: slideUpDown 5s ease-in-out infinite;
+}
+.news-item:nth-child(2) {
+    animation-delay: 2.5s; /* 第二个新闻项目动画延迟2.5秒开始 */
+}
+/* 网页介绍：首页 */
+/* 网页介绍部分样式 */
+.web-intro {
+    width: 50%; /* 文本宽度占满右半个页面 */
+    padding: 20px; /* 适当的内边距，确保文本不会紧贴边缘 */
+    /* 可以添加更多样式，如字体大小、颜色等 */
+}
+
+.web-intro h2 {
+    margin-bottom: 150px; /* 标题与段落之间的间距 */
+    color: #f00; /* 红色标题 */
+    font-size: 30px;
+}
+
+.web-intro p {
+    line-height: 1.6; /* 行高 */
+    font-size: 23px;
+    /* 可以添加更多样式 */
+}
+/* 高亮 */
+
+/* body {
+    background-color: #ffffdb;
+    background-image: url('bubbles.svg'); /* SVG文件的相对路径 */
+    /* 其他样式 */
+
+
+
+/* fe7600 */
+/* ffffdb */
+
+/* 第三页 */
+.heritage-persons {
+    text-align: center; /* 文本居中 */
+    padding: 20px; /* 内边距 */
+    background: linear-gradient(to right, #ffffff, #f9f9f9); /* 渐变背景 */
+}
+.heritage-persons {
+    background-color: #f9f9f9; /* 轻微灰色背景 */
+    border: 1px solid #eaeaea; /* 细边框 */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 轻微阴影 */
+    position: relative; /* 为了添加伪元素装饰 */
+}
+
+.persons-gallery {
+    display: flex;
+    justify-content: space-around; /* 图片间隔相同 */
+    align-items: center; /* 垂直居中对齐 */
+}
+.person-item:hover {
+    transform: translateY(-5px); /* 鼠标悬停时上移 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* 鼠标悬停时阴影加深 */
+}
+
+.person-item {
+    width: calc(33.333% - 20px); /* 三个图片框平分一行，减去间隔 */
+    margin: 10px; /* 间隔 */
+    background-color: #fff; /* 卡片背景颜色 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 卡片阴影 */
+    border-radius: 10px; /* 卡片圆角 */
+    overflow: hidden; /* 隐藏溢出内容 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 过渡效果 */
+}
+
+.person-item img {
+    width: 100%; /* 图片宽度占满容器 */
+    height: auto; /* 高度自动 */
+    transition: transform 0.3s ease; /* 平滑变换效果 */
+}
+.person-item:hover img {
+    transform: scale(1.05); /* 鼠标悬停时放大图片 */
+}
+
+.person-item p {
+    margin-top: 10px; /* 文字与图片的间距 */
+}
+
+
+/* body {
+    background-color: #ffffdb;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23fe7600' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+    background-repeat: repeat; /* 图案重复 */
+    /* background-size: auto; /* 图案大小，可调整为合适的值 */
+    /* background-attachment: fixed; 图案固定，滚动时不随页面滚动 */ 
+/* } */ 
+
+
+/* 第四页 */
+.heritage-market {
+    padding: 40px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.market-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.market-item {
+    width: calc(33.333% - 40px);
+    margin: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.market-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.market-item img {
+    width: 100%;
+    height: auto;
+}
+
+.market-item h3 {
+    margin: 10px;
+    font-size: 1.2em;
+}
+
+.market-item p {
+    font-size: 0.9em;
+    color: #555;
+    padding: 0 10px;
+}
+
+.market-item .price {
+    font-size: 1.1em;
+    color: #e44d26;
+    font-weight: bold;
+    margin: 10px;
+}
+
+/* 介绍页的样式 */
+.intro {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(to right, #ffffff, #f2f2f2); /* 渐变背景 */
+    position: relative; /* 为了添加伪元素装饰 */
+    overflow: hidden; /* 隐藏溢出的内容 */
+}
+
+/* 介绍页的动态内容样式 */
+.dynamic-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; /* 元素之间的间隙 */
+}
+
+.dynamic-content img {
+    width: 50%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease; /* 平滑变换效果 */
+}
+
+.dynamic-content img:hover {
+    transform: scale(1.05); /* 鼠标悬停时放大图片 */
+}
+
+/* 介绍页的文本内容样式 */
+.web-intro {
+    width: 50%;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* 半透明白色背景 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 文本框阴影 */
+    border-radius: 10px; /* 圆角 */
+}
+
+.web-intro h2 {
+    color: #e44d26; /* 标题颜色 */
+    margin-bottom: 20px;
+}
+
+.web-intro p {
+    line-height: 1.6;
+    color: #555; /* 文本颜色 */
+}
+
+/* 添加一些装饰性的图案或元素 */
+.intro::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: url('decorative-pattern.svg'); /* 装饰图案 */
+    background-size: cover;
+    transform: translateY(-50%);
+    z-index: -1; /* 置于内容之下 */
+    opacity: 0.5; /* 半透明 */
+}
+
+/* 高亮 */
+.highlight-size2 {
+    font-size: 20px; /* 或任何适合您设计的大小 */
+    font-weight: bold; /* 可选：加粗以增加视觉冲击力 */
+    color: #ff0000; /* 可选：更改字体颜色以进一步突出显示 */
+}
+
+.highlight-size {
+    font-size: 20px; /* 或任何适合您设计的大小 */
+    font-weight: bold; /* 可选：加粗以增加视觉冲击力 */
+    /* color: #ff0000; 可选：更改字体颜色以进一步突出显示 */
+}
